@@ -4,19 +4,19 @@ require('../db/connection')
 const UserData = require('../model/userSchema');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const authenticate=require('../middleware/authenticate')
-const logout=require('../middleware/logout')
+const authenticate = require('../middleware/authenticate')
+const logout = require('../middleware/logout')
 
 
 
 
 
-router.use(express.json())
+// router.use(express.json())/
 router.post('/register', async (req, res) => {
+
     const { userName, userPhone, userEmail, userPassword, userConfirmPassword, userLocation } = req.body //es6 prop object destructuring ir userName=req.body.userName to {userNAme}=req.body
     if (!userName || !userPhone || !userEmail || !userPassword || !userConfirmPassword) {
         return res.status(422).json({ error: "enter all credintials" })
-        console.log(req.body)
     }
     else {
 
@@ -51,6 +51,10 @@ router.post('/register', async (req, res) => {
 
 })
 
+
+
+
+
 router.post("/login", async (req, res) => {
     const { userEmail, userPassword } = req.body
     console.log(req.body);
@@ -66,9 +70,15 @@ router.post("/login", async (req, res) => {
                 console.log(token);
                 res.cookie("jwtoken", token, {
                     expires: new Date(Date.now() + 2630000000),
-                    httpOnly: true
+                    sameSite: "None",
+                    secure: true
                 })
-                return res.status(201).json({ sucess: "sucessful login" })
+                if (Verify.isAdmin) {
+                    return res.status(201).json({ success: "successful login ", isAdmin: true })
+                } else {
+
+                    return res.status(201).json({ success: "sucessful login" })
+                }
             }
             else {
                 res.status(422).json({ error: "given credentials are incorrect" })
@@ -79,24 +89,26 @@ router.post("/login", async (req, res) => {
 
         }
     }
-
-
 })
 
 //koni k gareko
 router.get('/api/logs', authenticate, (req, res) => {
-    if (req.rootUser){
+    console.log(req)
+    if (req.rootUser.isAdmin) {
         // console.log(res)
-        res.status(200).send(true);
+        res.status(200).json({message:true, isAdmin: true });
+    }
+    else if (req.rootUser) {
+        res.status(200).json({message:true})
     } else {
         res.status(401).send(false);
     }
 });
 
 
-router.get('/logout',logout,(req,res)=>{
-    res.clearCookie('jwtoken',{path:'/'})
-    res.status(200).json({sucess:"logout sucess"})
+router.get('/logout', logout, (req, res) => {
+    res.clearCookie('jwtoken', { path: '/' })
+    res.status(200).json({ sucess: "logout sucess" })
 });
 
 module.exports = router;

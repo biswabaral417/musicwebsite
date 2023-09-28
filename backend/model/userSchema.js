@@ -3,21 +3,24 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 
 
-const songSchema = new mongoose.Schema({
-    song: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'musics', // Reference the 'musics' model
-        required: true
-    }
-});
-
+// const songSchema = new mongoose.Schema({
+//     song: {
+//         type: mongoose.Schema.Types.ObjectId,
+//         ref: 'musics', // Reference the 'musics' model
+//     }
+// });
 
 const playlistSchema = new mongoose.Schema({
     playlistName: {
         type: String,
         required: true
     },
-    songs: [songSchema] // Array of songs using the songSchema
+    songs: [
+        {
+        type: mongoose.Schema.ObjectId,
+        ref: 'musics'
+    }
+]
 });
 
 const userSchema = new mongoose.Schema({
@@ -36,6 +39,11 @@ const userSchema = new mongoose.Schema({
     userPassword: {
         type: String,
         required: true
+    }, 
+    isAdmin:{
+        type:Boolean,
+        required:false,
+        default:false
     },
     tokens: [
         {

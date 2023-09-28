@@ -24,8 +24,9 @@ require('./db/connection')// adding db connectio
 
 
 
-app.use(require('./router/authentications')) //route files authentications files
 app.use(require('./router/musics'))//give foods data
+app.use(require('./router/authentications')) //route files authentications files
+app.use(require('./router/adminsreg')) //route files adminregisteration files
 
 
 
