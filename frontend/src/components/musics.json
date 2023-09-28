@@ -1,0 +1,68 @@
+{
+    "songs": [
+      {
+        "songName": "Pop Song 1",
+        "songAudioLoc": "path/audios/milenalvl.mp3",
+        "songAlbum": "Pop Album 1",
+        "songAlbumImg": "path/img/pop_album1.jpg",
+        "songGenre": "Pop"
+      },
+      {
+        "songName": "Pop Song 2",
+        "songAudioLoc": "path/audios/pop2.mp3",
+        "songAlbum": "Pop Album 1",
+        "songAlbumImg": "path/img/pop_album1.jpg",
+        "songGenre": "Pop"
+      },
+      {
+        "songName": "Pop Song 10",
+        "songAudioLoc": "path/audios/pop10.mp3",
+        "songAlbum": "Pop Album 2",
+        "songAlbumImg": "path/img/pop_album2.jpg",
+        "songGenre": "Pop"
+      },
+      {
+        "songName": "Rock Song 1",
+        "songAudioLoc": "path/audios/rock1.mp3",
+        "songAlbum": "Rock Album 1",
+        "songAlbumImg": "path/img/rock_album1.jpg",
+        "songGenre": "Rock"
+      },
+      {
+        "songName": "Rock Song 2",
+        "songAudioLoc": "path/audios/rock2.mp3",
+        "songAlbum": "Rock Album 1",
+        "songAlbumImg": "path/img/rock_album1.jpg",
+        "songGenre": "Rock"
+      },
+      {
+        "songName": "Rock Song 10",
+        "songAudioLoc": "path/audios/rock10.mp3",
+        "songAlbum": "Rock Album 2",
+        "songAlbumImg": "path/img/rock_album2.jpg",
+        "songGenre": "Rock"
+      },
+      {
+        "songName": "Electronic Song 1",
+        "songAudioLoc": "path/audios/electronic1.mp3",
+        "songAlbum": "Electronic Album 1",
+        "songAlbumImg": "path/img/electronic_album1.jpg",
+        "songGenre": "Electronic"
+      },
+      {
+        "songName": "Electronic Song 2",
+        "songAudioLoc": "path/audios/electronic2.mp3",
+        "songAlbum": "Electronic Album 1",
+        "songAlbumImg": "path/img/electronic_album1.jpg",
+        "songGenre": "Electronic"
+      },
+      {
+        "songName": "Electronic Song 10",
+        "songAudioLoc": "path/audios/electronic10.mp3",
+        "songAlbum": "Electronic Album 2",
+        "songAlbumImg": "path/img/electronic_album2.jpg",
+        "songGenre": "Electronic"
+      }
+    ]
+  }
+  
