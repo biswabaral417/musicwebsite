@@ -27,8 +27,8 @@ console.log(item)
     return (
         <>
             <div className='Modal-wrapper'></div>
-            <div>
-                <h1 className='p-5 Modal-container'>are u sure u want to delete item {item.itemName} from the menu?</h1>
+            <div className='Modal-container'>
+                <h1 className='p-5 ' style={{height:"400px"}}>are u sure u want to delete item {item.itemName} from the menu?</h1>
                 <div className='d-flex'>
                     <button className='btn btn-primary m-2 ' onClick={() => {setRemoveSongsModal(false); RemoveSongfrmDb(item) }} >yes</button><button className='btn btn-primary m-2 ' onClick={()=>setRemoveSongsModal(false)} >no</button>
                 </div>
