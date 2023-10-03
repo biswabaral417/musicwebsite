@@ -59,7 +59,7 @@ export default function AddsongsModal() {
 
                 </div>
                 <div className='m-2'>
-                    <label className='label-width' htmlFor="songAlbumImg">song album location</label>
+                    <label className='label-width' htmlFor="songAlbumImg">song album image location</label>
                     <input type="string" id='songAlbumImg' placeholder='enter image location in images folder' onChange={stateupdateinputs} value={inputSongs.songAlbumImg} />
 
                 </div>
@@ -69,12 +69,12 @@ export default function AddsongsModal() {
 
                 </div>
                 <div className='m-2'>
-                    <label className='label-width' htmlFor="songAudioLoc">image location</label>
+                    <label className='label-width' htmlFor="songAudioLoc">song audio</label>
                     <input type="string" id='songAudioLoc' placeholder='enter song Audio location' onChange={stateupdateinputs} value={inputSongs.songAudioLoc} />
 
                 </div>
                 <div className='d-flex'>
-                    <button className='btn btn-danger m-2' onClick={() => { setAddSongsModal(false); AddmodifySongs(inputSongs) }} id='addfooditm'>add</button>
+                    <button className='btn btn-danger m-2' onClick={() => { setAddSongsModal(false); AddmodifySongs(inputSongs) }} >add</button>
                 </div>
             </div>
         </>
